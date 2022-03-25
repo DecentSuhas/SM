@@ -40,6 +40,5 @@ class StudentSignUp:
             ConnectToDB.myconnection.rollback()
 
 
-# Testing the commit here
 #tests = StudentSignUp()
 #tests.student_signup()
