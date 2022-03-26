@@ -1,4 +1,4 @@
-from PracticeScripts.StudentManagement.DB_Operations import ConnectToDB
+from StudentMgmt.DB_Operations import ConnectToDB
 
 
 class AdminLogin(ConnectToDB):

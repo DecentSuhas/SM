@@ -1,4 +1,4 @@
-from PracticeScripts.StudentManagement.DB_Operations import ConnectToDB
+from StudentMgmt.DB_Operations import ConnectToDB
 
 
 class StudentLogin(ConnectToDB):
@@ -37,5 +37,5 @@ class StudentLogin(ConnectToDB):
             self.display_record_of_user("student_details", u_name)
 
 
-#tests = StudentLogin()
-#tests.displayDetails()
+tests = StudentLogin()
+tests.displayDetails()

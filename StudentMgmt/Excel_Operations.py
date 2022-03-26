@@ -2,10 +2,12 @@ import random
 
 import openpyxl
 
-from PracticeScripts.StudentManagement.AdminLogin import AdminLogin
-from PracticeScripts.StudentManagement.DB_Operations import ConnectToDB
+
 import pandas as pd
 from matplotlib import pyplot as plt
+
+from StudentMgmt.AdminLogin import AdminLogin
+from StudentMgmt.DB_Operations import ConnectToDB
 
 
 def export_students_details(tablename, u_name):
