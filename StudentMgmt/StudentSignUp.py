@@ -1,6 +1,5 @@
-from PracticeScripts.StudentManagement.DB_Operations import ConnectToDB
-from PracticeScripts.StudentManagement.ReusableMethods import ReusableMethods
-
+from StudentMgmt.DB_Operations import ConnectToDB
+from StudentMgmt.ReusableMethods import ReusableMethods
 
 
 class StudentSignUp:
@@ -38,7 +37,3 @@ class StudentSignUp:
             print(Exception)
             print(e)
             ConnectToDB.myconnection.rollback()
-
-
-#tests = StudentSignUp()
-#tests.student_signup()

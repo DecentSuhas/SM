@@ -32,10 +32,7 @@ class StudentLogin(ConnectToDB):
             To display student's record based on the credentials entered.
         :return:
         """
+        print("=========== Welcome to student login ============")
         u_name = input("Enter the username: ")
         if self.studentLogin("student_details",u_name):
             self.display_record_of_user("student_details", u_name)
-
-
-tests = StudentLogin()
-tests.displayDetails()

@@ -1,8 +1,6 @@
 import random
 
 import openpyxl
-
-
 import pandas as pd
 from matplotlib import pyplot as plt
 
@@ -45,19 +43,16 @@ def export_students_records(tablename, u_name):
     db = ConnectToDB()
     fileName = "Students_Record.xlsx"
     try:
-        admin = AdminLogin()
-        if admin.verify_login("admin_credentials", u_name):
-            dbs1 = ConnectToDB.cursors.execute("select * from " + tablename)
-            value = ConnectToDB.cursors.fetchall()
-            df = pd.DataFrame(value)
-            df.columns = ['Name', 'Class', 'Section', 'ID']
-            writer = pd.ExcelWriter(fileName, engine='xlsxwriter')
-            df.to_excel(writer, sheet_name='Sheet1', index=False)
-            writer.save()
-            print("Details exported to .xlsx file successfully")
-        else:
-            print("Failed to export")
+        dbs1 = ConnectToDB.cursors.execute("select * from " + tablename)
+        value = ConnectToDB.cursors.fetchall()
+        df = pd.DataFrame(value)
+        df.columns = ['Name', 'Class', 'Section', 'ID']
+        writer = pd.ExcelWriter(fileName, engine='xlsxwriter')
+        df.to_excel(writer, sheet_name='Sheet1', index=False)
+        writer.save()
+        print("Details exported to .xlsx file successfully")
     except Exception as e:
+        print("Failed to export. Please try again later")
         print(e)
         ConnectToDB.myconnection.rollback()
 
@@ -162,6 +157,3 @@ def import_by_row(table_name):
     print(f"Uploaded",{pass_count},"records successfully")
     print(f"Failed to upload",{fail_count},"record(s)")
 
-#export_students_records("student_records","admin")
-#generate_barGraph_StudentsCount()
-#import_by_row("student_records")
