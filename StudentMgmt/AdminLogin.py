@@ -11,6 +11,9 @@ class AdminLogin(ConnectToDB):
         :param db:
         :return:
         """
+        print("\n")
+        print("========== Hello user. Welcome to admin page ==============")
+        print("\n")
         query = "select password from " + tablename + " where username =\'" + u_name + "\'"
         fetch_password = db.display_record(query)
         count = 0
@@ -35,8 +38,9 @@ class AdminLogin(ConnectToDB):
         :return:
         """
         #f self.verify_login(tablename,u_name):
-        print("")
+        print("\n")
         print(" ===============  Welcome to \'ADD STUDENT RECORD PAGE\'   =============== ")
+        print("\n")
         for i in range(2):
             s_name = input("Enter student name: ")
             s_class = input("Enter class room: ")
@@ -54,7 +58,9 @@ class AdminLogin(ConnectToDB):
         #    print("Login is unsuccessful")
 
     def get_all_records(self,tablename,db=ConnectToDB()):
+        print("\n")
         print("---------- Displaying all the records ------------")
+        print("\n")
         db.display_all_records(tablename)
 
 

@@ -57,4 +57,4 @@ def call_to_action(feature):
         login_as_student()
 
 
-call_to_action(get_feature)
+

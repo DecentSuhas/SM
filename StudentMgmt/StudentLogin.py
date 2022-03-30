@@ -11,6 +11,9 @@ class StudentLogin(ConnectToDB):
         :param db:
         :return: Boolean
         """
+        print("\n")
+        print("=============== Hello user, Welcome to student login page ================")
+        print("\n")
         query = "select password from " + tablename + " where username =\'" + u_name + "\'"
         fetch_password = db.display_record(query)
         count = 0

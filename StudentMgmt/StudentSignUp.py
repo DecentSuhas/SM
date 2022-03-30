@@ -11,6 +11,7 @@ class StudentSignUp:
         """
         print("\n")
         print("***********  WELCOME TO STUDENT SIGNUP PAGE ************")
+        print("\n")
         f_name = input("Enter your First Name: ")
         l_name = input("Enter your Last Name: ")
         reuse_methods = ReusableMethods()
