@@ -11,9 +11,6 @@ class StudentLogin(ConnectToDB):
         :param db:
         :return: Boolean
         """
-        print("\n")
-        print("=============== Hello user, Welcome to student login page ================")
-        print("\n")
         query = "select password from " + tablename + " where username =\'" + u_name + "\'"
         fetch_password = db.display_record(query)
         count = 0
@@ -35,7 +32,9 @@ class StudentLogin(ConnectToDB):
             To display student's record based on the credentials entered.
         :return:
         """
-        print("=========== Welcome to student login ============")
+        print("\n")
+        print("=============== Hello user, Welcome to student login page ================")
+        print("\n")
         u_name = input("Enter the username: ")
         if self.studentLogin("student_details",u_name):
             self.display_record_of_user("student_details", u_name)

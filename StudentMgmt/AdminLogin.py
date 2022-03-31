@@ -3,7 +3,7 @@ from StudentMgmt.DB_Operations import ConnectToDB
 
 class AdminLogin(ConnectToDB):
 
-    def verify_login(self, tablename, u_name, db=ConnectToDB()):
+    def verify_login(self, tablename, db=ConnectToDB()):
         """
             To verify the sercure login by validating the credentials given
         :param tablename:
@@ -14,6 +14,7 @@ class AdminLogin(ConnectToDB):
         print("\n")
         print("========== Hello user. Welcome to admin page ==============")
         print("\n")
+        u_name = input("Enter the username: ")
         query = "select password from " + tablename + " where username =\'" + u_name + "\'"
         fetch_password = db.display_record(query)
         count = 0
